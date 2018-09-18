@@ -1,0 +1,87 @@
+<div class="container pad-32">
+  <div class="row">
+    <div class="col-md-4">
+      <form>
+        <div class="form-group">
+          <label for="learningRateInput">Learning Rate</label>
+          <select class="form-control form-control-sm" id="learningRateInput"
+              name="learningRate" [(ngModel)]="learningRate">
+            <option *ngFor="let value of learningRateOptions" [value]="value">{{value}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="batchSizeInput">Batch Size</label>
+          <select class="form-control form-control-sm" id="batchSizeInput"
+              name="batch" [(ngModel)]="batchSizeFraction">
+            <option *ngFor="let value of batchSizeOptions" [value]="value">{{value}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="epochsInput">Epochs</label>
+          <select class="form-control form-control-sm" id="epochsInput"
+              name="epochs" [(ngModel)]="epochs">
+            <option *ngFor="let value of epochOptions" [value]="value">{{value}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="denseUnitsInput">Hidden Units</label>
+          <select class="form-control form-control-sm" id="denseUnitsInput"
+              name="dense" [(ngModel)]="denseUnits">
+            <option *ngFor="let value of denseUnitOptions" [value]="value">{{value}}</option>
+          </select>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md">
+      <div class="webcam-box">
+        <video autoplay playsinline muted id="webcam" width="224" height="224" #webcam></video>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <button type="button" class="btn btn-primary btn-lg" (click)="train()" [disabled]="training">
+        Train
+      </button>
+      <div *ngIf="training">Training...</div>
+      <div>{{trainingStatus}}</div>
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="!!error">
+      {{error}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="thumb-box" (click)="getExample(NEUTRAL)">
+        <canvas class="thumb" width="224" height="224" #neutralThumb></canvas>
+      </div>
+      <div class="thumb-label">
+        Neutral <span class="badge badge-secondary">{{exampleCounts[NEUTRAL]}}</span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="thumb-box" (click)="getExample(PAPER)">
+        <canvas class="thumb" width=224 height=224 #paperThumb></canvas>
+      </div>
+      <div class="thumb-label">
+        Paper <span class="badge badge-secondary">{{exampleCounts[PAPER]}}</span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="thumb-box" (click)="getExample(ROCK)">
+        <canvas class="thumb" width=224 height=224 #rockThumb></canvas>
+      </div>
+      <div class="thumb-label">
+        Rock <span class="badge badge-secondary">{{exampleCounts[ROCK]}}</span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="thumb-box" (click)="getExample(SCISSORS)">
+        <canvas class="thumb" width=224 height=224 #scissorsThumb></canvas>
+      </div>
+      <div class="thumb-label">
+        Scissors <span class="badge badge-secondary">{{exampleCounts[SCISSORS]}}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+.pad-32 {
+  padding: 32px;
+}
+
+.webcam-box {
+  background: #585858;
+  border: 2px solid #333333;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 9px;
+}
+
+.thumb-box {
+  background: #585858;
+  border: 2px solid #333333;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 9px;
+}

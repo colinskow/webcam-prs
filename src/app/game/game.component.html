@@ -1,0 +1,13 @@
+<div class="container pad-32">
+  <div class="row">
+    <div class="col-sm">
+        <div class="alert alert-danger" role="alert" *ngIf="!!error">
+          {{error}}
+        </div>
+      <div class="webcam-box">
+        <video autoplay playsinline muted id="webcam" width="224" height="224" #webcam></video>
+      </div>
+      <h1>{{prediction}}</h1>
+    </div>
+  </div>
+</div>
