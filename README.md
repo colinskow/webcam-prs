@@ -1,6 +1,6 @@
 # Webcam Paper Rock Scissors with TensorFlow.js
 
-Train a neural network in your browser to recognize Paper, Rock and Scissors gestures using Angular and TensorFlow.js.
+Train a neural network in your browser to recognize Paper, Rock and Scissors gestures using Angular and TensorFlow.js. (Requires Google Chrome.)
 
 Try out the [Live Demo](https://colinskow.github.io/webcam-prs)!
 
