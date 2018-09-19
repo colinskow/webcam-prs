@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
+    "build-gh": "ng build --prod --base-href /webcam-prs/",
+    "deploy-gh": "npm run build-gh && ./github-deploy.sh",
     "postinstall": "node patch-cli.js",
     "test": "ng test",
     "lint": "ng lint",
