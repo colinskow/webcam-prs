@@ -2,7 +2,7 @@ STATUS="$(git status)"
 
 if [[ $STATUS == *"nothing to commit, working tree clean"* ]]
 then
-    sed -i "" '/dist' ./.gitignore
+    sed -i "" '/\/dist/d' ./.gitignore
     git add .
     git commit -m "Edit .gitignore to publish"
     git push origin `git subtree split --prefix dist/webcam-prs master`:gh-pages --force
